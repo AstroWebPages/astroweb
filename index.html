@@ -441,7 +441,7 @@
 
                     <div class="col-lg-2 col-md-3 col-12">
                         <a class="navbar-brand" href="index.html">
-                            <img src="https://astrowebpages.github.io/astrowebpages/assets/img/logo.gif" class="logo-image img-fluid" alt="templatemo pod talk">
+                            <img src="https://astrowebpages.github.io/astrowebpages/assets/img/logo.gif" class="logo-image img-fluid" alt="ASTRO">
                         </a>
                     </div>
 
@@ -480,6 +480,34 @@
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/owl.carousel.min.js"></script>
         <script src="js/custom.js"></script>
+
+
+<script>
+// Selecciona todos los GIFs (por ejemplo: img[src$=".gif"])
+const gifs = document.querySelectorAll('img[src$=".gif"]');
+
+// Crea un IntersectionObserver
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const img = entry.target;
+    if (!entry.isIntersecting) {
+      // Si el GIF no es visible, lo pausamos reiniciando su src
+      img.dataset.src = img.src; // guarda el src original
+      img.src = ''; // borra
+    } else {
+      // Si el GIF vuelve a ser visible, lo recarga
+      if (img.src === '' && img.dataset.src) {
+        img.src = img.dataset.src;
+      }
+    }
+  });
+}, { threshold: 0.1 }); // 0.1 significa: cuando al menos 10% sea visible
+
+// Observa todos los GIFs
+gifs.forEach(gif => observer.observe(gif));
+</script>
+
+
 
     </body>
 </html>
