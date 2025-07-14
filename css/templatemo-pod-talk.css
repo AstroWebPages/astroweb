@@ -1002,6 +1002,7 @@ main {
   SITE FOOTER              
 -----------------------------------------*/
 .site-footer {
+  position: relative;
   background-image: url('../images/templatemo-wave-footer.gif'), linear-gradient(#FFFFFF, #348CD2);
   background-repeat: no-repeat;
   background-size: cover;
@@ -1010,6 +1011,24 @@ main {
   padding-top: 100px;
   padding-bottom: 150px;
 }
+
+.site-footer::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -80px; /* Altura encima del footer */
+  left: 0;
+  width: 100%;
+  height: 80px; /* Altura de la franja */
+  background: linear-gradient(
+    to bottom,
+    #FFFFFF 0%,
+    #000000 100%
+  );
+  z-index: 2;
+}
+
+
 
 .site-footer > .container {
   position: relative;
