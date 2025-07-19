@@ -1025,7 +1025,7 @@ main {
     #FFFFFF 0%,
     #000000 100%
   );
-  z-index: 2;
+  z-index: 0;
 }
 
 
