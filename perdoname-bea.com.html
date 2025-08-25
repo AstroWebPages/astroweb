@@ -2,25 +2,45 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Perdoname Bea</title>
+  <title>Perdoname Bea – Hello Kitty Baila</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { font-family: system-ui, Arial, sans-serif; margin: 0; padding: 24px; display: grid; place-items: center; gap: 16px; }
-    p { font-size: 1.25rem; margin: 0; }
-    .video-wrap { width: 100%; max-width: 720px; aspect-ratio: 16 / 9; }
-    .video-wrap iframe { width: 100%; height: 100%; border: 0; border-radius: 12px; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: #ffeef5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      color: #a33065;
+    }
+    .phrase {
+      font-size: 1.5rem;
+      margin-top: 1em;
+      background: rgba(255,255,255,0.8);
+      padding: 0.5em 1em;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(255,100,160,0.4);
+    }
+    img {
+      width: 200px;
+      height: auto;
+    }
   </style>
 </head>
 <body>
-  <p>PerdonameBea.com 💔</p>
-
-  <div class="video-wrap">
-    <iframe
-      src="https://www.youtube-nocookie.com/embed/J---aiyznGQ?loop=1&playlist=J---aiyznGQ&controls=1&rel=0"
-      title="YouTube video player"
-      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen>
-    </iframe>
-  </div>
+  <img src="hellokitty-dance.gif" alt="Hello Kitty bailando" />
+  <div class="phrase">olvidé tu segundo nombre pero no tu personaje de niña chiquito favorito</div>
+  <audio id="bgMusic" src="keyboardcat.mp3" loop preload="auto"></audio>
+  <script>
+    document.body.addEventListener('click', () => {
+      const audio = document.getElementById('bgMusic');
+      audio.play().catch(console.log);
+    }, { once: true });
+  </script>
 </body>
 </html>
